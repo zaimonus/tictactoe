@@ -1,0 +1,73 @@
+body {
+    background-color: white;
+}
+
+h1,
+h2,
+p,
+button {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+h1 {
+    font-size: 3rem;
+    text-decoration: underline;
+}
+
+#grid .cell {
+    border-radius: 2em;
+    border: 0.75rem solid black;
+
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center center;
+}
+
+#grid .cell.empty:hover {
+    background-color: gainsboro;
+    cursor: pointer;
+}
+
+#grid .cell.x {
+    background-color: lightseagreen;
+    background-image: url(/images/x.png);
+}
+
+#grid .cell.o {
+    background-color: lightcoral;
+    background-image: url(/images/o.png);
+}
+
+#overlay {
+    padding: 1rem;
+    border-radius: 2em;
+    background-color: gainsboro;
+}
+
+#overlaytitle, #overlaytext, #overlaybutton {
+    padding: 1rem;
+    margin: 1rem auto;
+    font-weight: bolder;
+}
+
+#overlaybutton {
+    border-radius: 2em;
+    color: white;
+    background-color: black;
+}
+
+#overlaywrapper.success #overlaytext {
+    color: green;
+}
+
+#overlaywrapper.error #overlaytext {
+    color: red;
+}
+
+#overlaywrapper.success #overlaybutton {
+    background-color: green;
+}
+
+#overlaywrapper.error #overlaybutton {
+    background-color: red;
+}

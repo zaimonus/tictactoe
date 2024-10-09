@@ -1,0 +1,73 @@
+* {
+    border: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+}
+
+header {
+    text-align: center;
+    margin: 1em;
+}
+
+main {
+    width: 90%;
+    margin: auto;
+}
+
+#grid {
+    width: calc(3 * 20vh);
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 20vh);
+}
+
+#grid .cell {
+    box-sizing: border-box;
+    width: 20vh;
+    height: 20vh;
+    text-align: center;
+}
+
+#overlaywrapper {
+    position: absolute;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#overlay {
+    width: 60%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#overlaytitle,
+#overlaytext,
+#overlaybutton {
+    text-align: center;
+}
+
+#overlaytitle,
+#overlaytext {
+    width: 70%;
+    margin: auto;
+}
+
+#overlaybutton {
+    width: 30%;
+    margin: auto;
+}
+
+h1 {
+    user-select: none;
+}
