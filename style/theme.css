@@ -4,23 +4,30 @@ body {
 
 h1,
 h2,
+h3,
 p,
 button {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 h1 {
-    font-size: 3rem;
     text-decoration: underline;
 }
 
-#grid .cell {
-    border-radius: 2em;
-    border: 0.75rem solid black;
-
+#grid .cell,
+#turn {    
     background-repeat: no-repeat;
     background-size: 80%;
     background-position: center center;
+}
+
+#turn {
+    border-radius: 1rem;
+}
+
+#grid .cell {
+    border: 0.75rem solid black;
+    border-radius: 1.5em;
 }
 
 #grid .cell.empty:hover {
@@ -28,39 +35,43 @@ h1 {
     cursor: pointer;
 }
 
-#grid .cell.x {
+#grid .cell.x,
+#turn.x {
     background-color: lightseagreen;
     background-image: url(/images/x.png);
 }
 
-#grid .cell.o {
+#grid .cell.o,
+#turn.o {
     background-color: lightcoral;
     background-image: url(/images/o.png);
 }
 
 #overlay {
     padding: 1rem;
-    border-radius: 2em;
-    background-color: gainsboro;
+    border-radius: 1em;
+    background-color: #eee;
+    box-shadow: 0 30px 30px rgba(0, 0, 0, 0.15), 0 10px 15px rgba(0, 0, 0, 0.1);
 }
 
-#overlaytitle, #overlaytext, #overlaybutton {
-    padding: 1rem;
-    margin: 1rem auto;
+#overlaytitle,
+#overlaytext,
+#overlaybutton {
     font-weight: bolder;
 }
 
 #overlaybutton {
+    padding: 1rem;
     border-radius: 2em;
     color: white;
-    background-color: black;
+    background-color: blue;
 }
 
-#overlaywrapper.success #overlaytext {
+#overlaywrapper.success #overlaytitle {
     color: green;
 }
 
-#overlaywrapper.error #overlaytext {
+#overlaywrapper.error #overlaytitle {
     color: red;
 }
 
@@ -70,4 +81,16 @@ h1 {
 
 #overlaywrapper.error #overlaybutton {
     background-color: red;
+}
+
+@media only screen and (max-width: 800px) {
+    #turn {
+        border-radius: 0.5rem;
+    }
+
+    #grid .cell {
+        border-radius: 1rem;
+        border-width: 0.5rem;
+    }
+
 }

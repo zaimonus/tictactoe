@@ -150,6 +150,17 @@
 
     const game = new Game();
 
+    function displayPlayer() {
+        const turn = document.querySelector("#turn");
+        if (game.turn > 0) {
+            turn.classList.remove("o");
+            turn.classList.add("x");
+        } else {
+            turn.classList.remove("x");
+            turn.classList.add("o");
+        }
+    }
+
     function cellClickEvent(event) {
         const cell = event.target;
         const rowIndex = cell.dataset.row;
@@ -159,7 +170,7 @@
         }
 
         if (!game.isPossible(rowIndex, columnIndex)) {
-            displayError("Occupied!", "You cannot place your mark here! This cell is not empty!");
+            //displayError("Occupied!", "You cannot place your mark here! This cell is not empty!");
             return;
         }
 
@@ -174,11 +185,14 @@
 
         if (game.hasWon(game.turn)) {
             displaySuccess("Congratulations!!", `Player ${game.turn > 0 ? "x" : "o"} wins!`);
+            return;
         } else if (game.isFull) {
             displayError("It's a draw!", "Try better next time!");
+            return;
         }
 
         game.nextPlayer();
+        displayPlayer();
     }
 
     const grid = document.querySelector("#grid");
