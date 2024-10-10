@@ -38,13 +38,13 @@ h1 {
 #grid .cell.x,
 #turn.x {
     background-color: lightseagreen;
-    background-image: url(/images/x.png);
+    background-image: url(../images/x.png);
 }
 
 #grid .cell.o,
 #turn.o {
     background-color: lightcoral;
-    background-image: url(/images/o.png);
+    background-image: url(../images/o.png);
 }
 
 #overlay {
